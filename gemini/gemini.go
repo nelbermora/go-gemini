@@ -19,13 +19,13 @@ func AskForData(input, key string) ([]string, error) {
 	}
 	defer client.Close()
 
-	model := client.GenerativeModel("gemini-1.0-pro")
-
-	model.SetTemperature(0.8)
+	model := client.GenerativeModel("gemini-1.5-pro")
+	//model.
+	/*model.SetTemperature(0.8)
 	model.SetTopP(0.6)
 	model.SetTopK(5)
 	model.SetMaxOutputTokens(1000)
-	model.SetCandidateCount(1)
+	model.SetCandidateCount(1)*/
 
 	resp, err := model.GenerateContent(ctx, genai.Text(input))
 	if err != nil {
